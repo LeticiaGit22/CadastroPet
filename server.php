@@ -9,11 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $petraca = $_POST['petraca'];
     $data_nascimento = $_POST['data_nascimento'];
     $peso = $_POST['peso'];
-    $sexo = $_POST['sexo'];
+    $sexo = isset($_POST['sexo']) ? $_POST['sexo'] : 'Não informado';
     $servicos = isset($_POST['servicos']) ? implode(', ', $_POST['servicos']) : 'Nenhum serviço selecionado';
+    $data_horario = isset($_POST['data_horario']) ? $_POST['data_horario'] : 'Não informado';
 
     // Validando os dados
-    if (empty($nome) || empty($email) || empty($telefone) || empty($nomepet) || empty($especie) || empty($petraca)) {
+    if (empty($nome) || empty($email) || empty($telefone) || empty($nomepet) || empty($especie) || empty($petraca) || empty($data_horario)) {
         echo "Por favor, preencha todos os campos obrigatórios.";
         exit;
     }
@@ -27,6 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Diretório onde a imagem será salva
         $pasta_destino = 'uploads/';
+        // Criar o diretório se não existir
+        if (!is_dir($pasta_destino)) {
+            mkdir($pasta_destino, 0777, true);
+        }
         $foto_destino = $pasta_destino . basename($foto_nome);
 
         // Verificando se o arquivo é uma imagem e seu tamanho
@@ -53,10 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<p><strong>Peso:</strong> $peso kg</p>";
     echo "<p><strong>Sexo:</strong> $sexo</p>";
     echo "<p><strong>Serviços Selecionados:</strong> $servicos</p>";
+    echo "<p><strong>Data e Horário do Serviço:</strong> $data_horario</p>";
 
-    // Se a foto do pet foi enviada, exibe a imagem
-    if (isset($foto_destino)) {
-        echo "<p><strong>Foto do Pet:</strong> <img src='$foto_destino' alt='Foto do Pet' width='150'></p>";
+    // Exibindo a foto do pet
+    if (isset($foto_destino) && file_exists($foto_destino)) {
+        echo "<p><strong>Foto do Pet:</strong></p>";
+        echo "<img src='$foto_destino' alt='Foto do Pet' style='width:300px;'>";
     }
 
 } else {

@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+/* Reset básico */
+/* Remove margens e espaçamentos padrões, garantindo maior consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo básico do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte principal */
+    line-height: 1.6; /* Define o espaçamento entre linhas */
+    background-color: #44ba71; /* Fundo verde claro */
+    color: #333; /* Texto em cinza escuro */
+    padding: 20px; /* Espaçamento interno ao redor da página */
+}
+
+/* Container principal que centraliza o formulário na tela */
+.forms-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Altura mínima ocupa toda a tela */
+}
+
+/* Estilo do contêiner do formulário */
+.container {
+    background: #fff; /* Fundo branco */
+    padding: 30px 40px; /* Aumenta o preenchimento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    width: 100%; /* Largura completa dentro do limite */
+    max-width: 700px; /* Largura máxima definida */
+}
+/* Estilo para o cabeçalho */
+header h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #010101;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para o menu de navegação */
+nav {
+    background-color: #4CAF50; /* Fundo verde para o menu */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilo da lista do menu */
+.menu {
+    list-style: none; /* Remove os marcadores padrão */
+    display: flex; /* Exibe os itens lado a lado */
+    justify-content: center; /* Centraliza os itens */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo dos links do menu */
+.menu li a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: #fff; /* Texto branco */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px; /* Espaçamento interno para os links */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+/* Efeito hover no menu */
+.menu li a:hover {
+    background-color: #388E3C; /* Cor verde mais escura no hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .menu li a {
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
+}
+
+
+/* Estilo dos títulos principais (h1) */
+h1 {
+    font-size: 28px; /* Destaque maior no tamanho da fonte */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    color: #0a130b; /* Verde */
+    text-align: center; /* Centralizado */
+    font-weight: bold; /* Negrito */
+}
+
+/* Parágrafos descritivos abaixo dos títulos */
+p {
+    margin-bottom: 20px; /* Espaçamento abaixo do texto */
+    text-align: center; /* Texto centralizado */
+    color: #2a2828; /* Cinza escuro */
+}
+
+/* Estilo dos grupos de campos do formulário */
+.grupo, .form-group {
+    margin-bottom: 20px; /* Espaçamento entre os campos */
+}
+
+/* Estilo dos rótulos dos campos */
+label {
+    display: block; /* Cada rótulo ocupa uma linha */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 10px; /* Espaçamento abaixo do rótulo */
+    color: #1a1919; /* Cinza escuro */
+    font-size: 16px; /* Maior tamanho para destaque */
+}
+
+/* Estilo dos campos de entrada (input, textarea, etc.) */
+.controle {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    padding: 12px; /* Espaçamento interno maior */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho padrão do texto */
+}
+
+/* Estilo dos conjuntos (fieldsets) e seus títulos (legends) */
+fieldset {
+    border: 2px solid #4CAF50; /* Bordas verdes */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento externo */
+}
+
+legend {
+    font-size: 20px; /* Tamanho maior para destaque */
+    font-weight: bold; /* Negrito */
+    color: #4CAF50; /* Verde */
+    padding: 0 10px; /* Espaçamento interno horizontal */
+}
+
+/* Estilo para botões de opção (radio) e caixas de seleção (checkbox) */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px; /* Espaçamento entre o botão e o texto */
+}
+
+/* Estilo diferenciado para rótulos específicos */
+label[for="macho"], label[for="femea"], label[for="servicos"] {
+    font-weight: normal; /* Texto sem negrito */
+}
+
+/* Estilo padrão dos botões */
+input[type="submit"], input[type="reset"] {
+    background-color: #4CAF50; /* Fundo verde para ambos */
+    color: #fff; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar */
+    font-size: 16px; /* Tamanho do texto maior */
+    font-weight: bold; /* Negrito */
+    margin-right: 10px; /* Espaçamento entre botões */
+    transition: background-color 0.3s; /* Transição suave na mudança de cor */
+}
+
+/* Botão "Cadastrar" - Hover */
+input[type="submit"]:hover {
+    background-color: #388E3C; /* Verde mais escuro no hover */
+}
+
+/* Botão "Limpar" - Hover */
+input[type="reset"] {
+    background-color: #f44336; /* Vermelho */
+}
+
+input[type="reset"]:hover {
+    background-color: #d43509; /* Vermelho mais escuro no hover */
+}
+
+/* Responsividade - Ajustes para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduz o preenchimento */
+    }
+
+    h1 {
+        font-size: 22px; /* Reduz tamanho do título */
+    }
+
+    label, legend {
+        font-size: 16px; /* Ajusta tamanho das legendas e rótulos */
+    }
+
+    input[type="submit"], input[type="reset"] {
+        padding: 8px 12px; /* Reduz o espaçamento dos botões */
+        font-size: 14px; /* Texto menor */
+    }
+}
+
+
+
+
+/* Estilo da seção de desenvolvedores */
+.desenvolvedores {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #44ba71; /* Fundo verde claro */
+}
+
+.desenvolvedores .container {
+    background: #fff; /* Fundo branco */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto */
+    width: 100%;
+    max-width: 1000px; /* Ajusta o tamanho máximo */
+}
+
+/* Estilo do título principal e descrição */
+.desenvolvedores h2 {
+    font-size: 28px;
+    color: #0a130b;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.desenvolvedores p {
+    color: #2a2828;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Estilo da equipe */
+.equipe {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os membros */
+}
+
+/* Estilo de cada membro da equipe */
+.membro {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px; /* Largura fixa para cada membro */
+}
+
+.membro img {
+    width: 100px; /* Tamanho das imagens */
+    height: 100px;
+    border-radius: 50%; /* Torna a imagem circular */
+    margin-bottom: 15px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+}
+
+.membro h3 {
+    font-size: 18px;
+    color: #0a130b;
+    margin-bottom: 1
+}
